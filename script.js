@@ -1,5 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
+document.addEventListener("mousemove", function (event) {
+  gsap.to(".cursor", {
+    top: event.y,
+    left: event.x,
+    duration: 0.3,
+  });
+});
+
 gsap.from(".logo, .center, .navright", {
   y: -15,
   opacity: 0,
@@ -7,14 +15,16 @@ gsap.from(".logo, .center, .navright", {
   delay: 0.5,
 });
 
-gsap.from(".info-box1,.info-box2,.info-box3,.info-box4", {
+gsap.from(".ib", {
   x: -100,
   opacity: 0,
   duration: 0.5,
   delay: 0.5,
+  stagger: 0.05,
   scrollTrigger: {
     trigger: ".info",
     scroller: "body",
+    start: "top 80%",
   },
 });
 

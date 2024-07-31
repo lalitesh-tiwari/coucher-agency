@@ -33,6 +33,18 @@ body {
   scroll-behavior: smooth;
 }
 
+.cursor {
+  height: 1vmax;
+  width: 1vmax;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 999;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 .menubox {
   display: none;
 }
@@ -1712,7 +1724,7 @@ body {
     z-index: 999;
   }
 
-  .menubox > a{
+  .menubox > a {
     text-decoration: none;
     color: white;
     font-family: Poppins;
